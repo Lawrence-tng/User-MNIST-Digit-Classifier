@@ -4,11 +4,16 @@ Trains Sequential Model Using MNIST Digit Database, then uses model to classify 
  Please install the neccesary tools:
  https://www.anaconda.com/products/individual
  
-Once Anaconda is installed, set up new enviroment with python packages
+ 
+Setting up TenserFlow:
 
-Then in Anaconda Navigator, install TenserFlow packages
+1. Once Anaconda is installed, set up new enviroment with python packages
 
-To use the classifier, please run MNIST Digit Classification.py using the Python interpreter in the newly created enviroment
+2. In Anaconda Navigator, install TenserFlow packages
+
+3. Set MNIST Digit Classification.py's Python interpreter to the Python in the newly created enviroment
+
+Run MNIST Digit Classification.py
 
 Once model has finished training and UI will pop up 
 
