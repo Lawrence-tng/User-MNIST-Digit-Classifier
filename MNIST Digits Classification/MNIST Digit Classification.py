@@ -23,6 +23,7 @@ import math
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
+from keras import layers, optimizers
 
 #first
 np.random.seed(0)
@@ -53,14 +54,16 @@ x_train = x_train.reshape((x_train.shape[0], -1))
 x_test = x_test.reshape((x_test.shape[0], -1))
 # reshapes vector to 2d
 
-# Create model - fully connected neural network
-model = Sequential()  # allows us to add layers
-model.add(Dense(units=128, input_shape=(784,), activation='relu'))
-model.add(Dense(units=128, activation='relu'))
-model.add(Dropout(0.25))
-model.add(Dense(units=10, activation='softmax'))
-
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+# Create model 
+model = Sequential()
+model.add(layers.Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform', input_shape=(28, 28, 1)))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Flatten())
+model.add(Dense(100, activation='relu', kernel_initializer='he_uniform'))
+model.add(Dense(10, activation='softmax'))
+# compile model
+opt = optimizers.SGD(learning_rate=0.01, momentum=0.9)
+model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
 model.summary()
 
 # Train
