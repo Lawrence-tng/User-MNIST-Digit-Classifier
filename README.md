@@ -21,4 +21,5 @@ Draw digit on UI and press save
 
 Then a Matplotlib window will show the drawn digit as a MNIST-like Digit along with the predicted classification!
 
+![demo](https://github.com/Lawrence-tng/User-MNIST-Digit-Classifier/blob/master/ezgif.com-gif-maker%20(1).gif)
 
